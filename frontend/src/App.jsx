@@ -2,14 +2,23 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Home from "./components/Home";
+import Programs from "./components/Programs";  // Fixed import
+import { ThemeProvider } from './context/ThemeContext';
+import { Library } from "lucide-react";
 
 const App = () => {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Layout>
+    <ThemeProvider>
+      <Layout>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/library" element={<Library />} />
+
+            
+        </Routes>
+      </Layout>
+    </ThemeProvider>
   );
 };
 
