@@ -41,7 +41,7 @@ const Header = () => {
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
-          {[{ to: "/programs", label: "Programs" }, { to: "/library", label: "Library" }].map(({ to, label }) => (
+          {[{ to: "/programs", label: "Programs" }, { to: "/about", label: "AboutUs" }].map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
