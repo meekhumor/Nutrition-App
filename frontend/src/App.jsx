@@ -4,7 +4,7 @@ import Layout from "./layouts/Layout";
 import Home from "./components/Home";
 import Programs from "./components/Programs";  // Fixed import
 import { ThemeProvider } from './context/ThemeContext';
-import AboutUs from './components/AboutUs';
+import AboutMe from './components/AboutMe';
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/programs" element={<Programs />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<AboutMe />} />
         </Routes>
       </Layout>
     </ThemeProvider>

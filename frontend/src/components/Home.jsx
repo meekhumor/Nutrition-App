@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link, NavLink} from "react-router-dom"
 import { 
   Facebook, Instagram, Youtube, Mountain, Users, Leaf, Clock, 
   ShoppingBasket,TrendingUp,Calendar,  Heart, Brain, AlertTriangle, ChevronLeft, ChevronRight 
@@ -11,25 +12,29 @@ function Home() {
       quote: 'Lost weight and managed psoriasis with community support.',
       detail: 'Learned about cortisol’s role in obesity.',
       name: 'Sarah M.',
-      location: 'California'
+      location: 'California',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     },
     {
       quote: 'Fibromyalgia pain reduced by 70% in 1500 days.',
       detail: 'From monthly agony to once every 6 months.',
       name: 'David K.',
-      location: 'Toronto'
+      location: 'Toronto',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     },
     {
       quote: 'Diabetes transformed with a 13.9% A1C drop in 5 months.',
       detail: 'Regained strength and control.',
       name: 'Maria L.',
-      location: 'Texas'
+      location: 'Texas',
+      image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     },
     {
       quote: 'Sleep apnea symptoms disappeared after just 45 days.',
       detail: 'No more CPAP machine and I wake up refreshed.',
       name: 'James R.',
-      location: 'New York'
+      location: 'New York',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80'
     }
   ];
 
@@ -89,8 +94,7 @@ function Home() {
   ];
 
   const conditions = [
-    'Type 2 Diabetes', 'Obesity', 'IBS', 'Blood Pressure', 'Cortisol Issues', 
-    'Autoimmune', 'Thyroid', 'Migraine', 'Low Energy', 'Sleep Disorders'
+    'Obesity', 'Low Energy', 'Sleep Disorders', 'Migraine'
   ];
 
   const programFeatures = [
@@ -137,13 +141,10 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen font-sans bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-gray-900 dark:to-gray-900 text-gray-900 dark:text-gray-100">
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 px-6 overflow-hidden relative">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-green-300 dark:bg-green-700 rounded-full filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-300 dark:bg-yellow-700 rounded-full filter blur-3xl opacity-20 translate-x-1/3 translate-y-1/3"></div>
-        
+      <section className="py-16 px-4 overflow-hidden relative">
         
         <div className="container mx-auto max-w-7xl relative">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -155,7 +156,7 @@ function Home() {
                 <div className="hidden md:block absolute left-0 top-0 w-1 h-32 bg-gradient-to-b from-green-400 to-teal-500 dark:from-green-500 dark:to-teal-600 rounded-full"></div>
                 
                 <div className="ml-0 md:ml-8">
-                  <span className="inline-block text-xs font-semibold tracking-wider text-teal-600 dark:text-teal-400 uppercase mb-2 px-3 py-1 bg-teal-50 dark:bg-teal-900/40 rounded-full">New Approach</span>
+                  <span className="inline-block text-xs font-semibold tracking-wider text-teal-600 dark:text-teal-400 uppercase mb-2 px-3 py-1 bg-teal-50 dark:bg-teal-900/40 rounded-full">Live Healthy Live Fit </span>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400">Ready to Ditch Dieting</span>
@@ -192,10 +193,10 @@ function Home() {
                     </div>
                     
                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-                      <button className="w-full sm:w-auto bg-gradient-to-r from-yellow-500 to-amber-500 dark:from-yellow-600 dark:to-amber-600 text-white font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-yellow-500/20 dark:hover:shadow-yellow-600/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group">
+                      <Link to="/programs" className="w-full sm:w-auto bg-gradient-to-r from-yellow-500 to-amber-500 dark:from-yellow-600 dark:to-amber-600 text-white font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-yellow-500/20 dark:hover:shadow-yellow-600/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group">
                         Yes, I'm Ready!
                         <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </button>
+                      </Link>
                       
                       <p className="text-gray-600 dark:text-gray-300 mt-4 sm:mt-0">
                         Join our <span className="text-yellow-500 dark:text-yellow-400 font-bold">FREE</span> intro session
@@ -219,7 +220,7 @@ function Home() {
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                     <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs text-white font-medium mb-2">
-                      Holistic Approach
+                      Eat Healthy
                     </div>
                     <h3 className="text-white text-lg font-medium">Transform your relationship with food</h3>
                   </div>
@@ -231,22 +232,19 @@ function Home() {
         </div>
       </section>
 
-      {/* Who We Are */}
-      <section className="bg-gradient-to-b from-green-50 to-teal-50 dark:from-gray-800 dark:to-gray-900 py-24 px-4 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-green-200/20 to-transparent dark:from-green-700/10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tl from-teal-200/20 to-transparent dark:from-teal-700/10 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3"></div>
+      {/* Who Am I */}
+      <section className="py-16 px-4 relative overflow-hidden">
         
         <div className="container mx-auto max-w-5xl relative z-10">
           {/* Section header */}
           <div className="mb-16 text-center">
-            <div className="inline-block mb-3 px-4 py-1 bg-green-100/70 dark:bg-green-900/30 rounded-full text-xs uppercase tracking-wider font-semibold text-green-700 dark:text-green-300">Our Expertise</div>
+            <div className="inline-block mb-3 px-4 py-1 bg-green-100/70 dark:bg-green-900/30 rounded-full text-xs uppercase tracking-wider font-semibold text-green-700 dark:text-green-300">My Expertise</div>
             <h2 className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400 ${isVisible ? 'opacity-100' : 'opacity-0'} transform transition-all duration-1000`}>
-              Who Are We?
+              Who Am I?
             </h2>
             <div className="w-24 h-1 mx-auto mt-4 mb-6 bg-gradient-to-r from-green-400 to-teal-400 dark:from-green-500 dark:to-teal-500 rounded-full"></div>
             <p className="text-gray-600 dark:text-gray-300 max-w-lg mx-auto">
-              We're a team of passionate wellness experts dedicated to helping you achieve holistic health through natural approaches
+             I'm passionate wellness experts dedicated to helping you achieve holistic health through natural approaches
             </p>
           </div>
           
@@ -289,127 +287,98 @@ function Home() {
               </div>
             </div>
           </div>
-          
-          {/* Brand statement */}
-          <div className={`mt-20 bg-gradient-to-r from-yellow-400/20 to-amber-400/20 dark:from-yellow-900/20 dark:to-amber-900/20 backdrop-blur-sm p-8 rounded-2xl text-center transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-500`}>
-            <div className="inline-flex items-center justify-center w-12 h-12 mb-4 bg-yellow-400/30 dark:bg-yellow-500/20 rounded-full">
-              <div className="w-8 h-8 bg-yellow-500 dark:bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold">
-                CQ
-              </div>
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-600 dark:from-yellow-400 dark:to-amber-400">
-              Nutrify
-            </h3>
-            <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-lg mx-auto">
-              Each wellness journey is unique. We guide you to conquer your personal summit.
-            </p>
-          </div>
         </div>
       </section>
 
       {/* Join Us */}
-      <section className="bg-gradient-to-br from-green-50 via-teal-50 to-green-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 py-20 px-4 relative">
+      <section className="py-16 px-4 relative">
       {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-300/10 dark:bg-yellow-600/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-300/15 dark:bg-green-600/10 rounded-full filter blur-3xl"></div>
-      
-      <div className="container mx-auto max-w-5xl relative z-10">
-        <div className={`bg-white dark:bg-gray-800/70 backdrop-blur-sm border border-green-100 dark:border-green-900/30 p-8 md:p-10 rounded-3xl shadow-xl transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          
-          <div className="flex flex-col lg:flex-row items-center gap-10">
-            {/* Image column with decorative elements */}
-            <div className="relative w-full lg:w-1/3">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-teal-400/20 dark:from-green-500/20 dark:to-teal-500/20 rounded-xl transform rotate-3 scale-105"></div>
-              <div className="relative rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="/api/placeholder/400/600" 
-                  alt="Community Support" 
-                  className="w-full h-72 md:h-96 object-cover transition-transform duration-700 hover:scale-110"
-                />
-                {/* Overlay content */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                  <div className="flex items-center gap-2 text-white text-sm mb-2">
-                    <Users size={16} />
-                    <span>300+ Success Stories</span>
+     
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <div className={`bg-white dark:bg-gray-800/70 backdrop-blur-sm border border-green-100 dark:border-green-900/30 p-8 md:p-10 rounded-3xl shadow-xl transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+            
+            <div className="flex flex-col lg:flex-row items-center gap-10">
+              {/* Image column with decorative elements */}
+              <div className="relative w-full lg:w-1/3">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-teal-400/20 dark:from-green-500/20 dark:to-teal-500/20 rounded-xl transform rotate-3 scale-105"></div>
+                <div className="relative rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/community.jpg" 
+                    alt="Community Support" 
+                    className="w-full h-72 md:h-96 object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                  {/* Overlay content */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                    <div className="flex items-center gap-2 text-white text-sm mb-2">
+                      <Users size={16} />
+                      <span>300+ Success Stories</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Content column */}
-            <div className="flex-1">
-              <div className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 text-xs font-semibold rounded-full mb-3">TRANSFORM YOUR HEALTH</div>
               
-              <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400 mb-6">
-                Join Our 70-Day Foundation
-              </h2>
-              
-              <p className="text-gray-700 dark:text-gray-200 mb-6 text-lg">
-                Transform your relationship with health through our comprehensive program designed to create lasting lifestyle changes, not quick fixes.
-              </p>
-              
-              {/* Program features */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                {programFeatures.map((feature, index) => (
-                  <div 
-                    key={index}
-                    className={`flex items-center p-3 bg-green-50 dark:bg-green-900/30 rounded-lg transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-                    style={{ transitionDelay: `${index * 150}ms` }}
-                  >
-                    <div className="w-10 h-10 mr-3 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-800 text-green-600 dark:text-green-400">
-                      <feature.icon size={18} />
-                    </div>
-                    <span className="text-gray-700 dark:text-gray-200 text-sm">{feature.text}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <button className="group bg-gradient-to-r from-yellow-500 to-amber-500 dark:from-yellow-600 dark:to-amber-600 text-white font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-yellow-500/20 dark:hover:shadow-yellow-600/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center">
-                Enroll Now
-                <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </div>
-          
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold text-green-700 dark:text-green-300 mb-4">
-              Manage These Conditions:
-            </h3>
-            
-            <div className="flex flex-wrap gap-2 mb-6">
-              {conditions.map((condition, index) => (
-                <span 
-                  key={index} 
-                  className={`bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/40 dark:to-teal-900/40 border border-green-100 dark:border-green-800/30 px-3 py-1 rounded-full text-gray-700 dark:text-gray-200 text-sm transform transition-all duration-300 hover:scale-105 hover:shadow-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
-                  style={{ transitionDelay: `${index * 50}ms` }}
-                >
-                  {condition}
-                </span>
-              ))}
-            </div>
-            
-            <div className={`bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900/30 dark:to-yellow-900/30 border border-yellow-100 dark:border-yellow-800/30 p-4 md:p-5 rounded-xl mt-6 flex items-start transform transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <div className="min-w-fit p-2 bg-yellow-100 dark:bg-yellow-800/50 rounded-lg mr-4">
-                <AlertTriangle className="text-yellow-600 dark:text-yellow-400" size={20} />
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-800 dark:text-gray-100 mb-1">Not For Quick Fixes</h4>
-                <p className="text-gray-700 dark:text-gray-300 text-sm">
-                  This program is ideal for those committed to sustainable lifestyle changes and long-term health transformation. Results require dedication and active participation.
+              {/* Content column */}
+              <div className="flex-1">
+                <div className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 text-xs font-semibold rounded-full mb-3">TRANSFORM YOUR HEALTH</div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400 mb-6">
+                  Join My 70-Day Foundation
+                </h2>
+                
+                <p className="text-gray-700 dark:text-gray-200 mb-6 text-lg">
+                  Transform your relationship with health through our comprehensive program designed to create lasting lifestyle changes, not quick fixes.
                 </p>
+                
+                {/* Program features */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                  {programFeatures.map((feature, index) => (
+                    <div 
+                      key={index}
+                      className={`flex items-center p-3 bg-green-50 dark:bg-green-900/30 rounded-lg transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                      style={{ transitionDelay: `${index * 150}ms` }}
+                    >
+                      <div className="w-10 h-10 mr-3 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-800 text-green-600 dark:text-green-400">
+                        <feature.icon size={18} />
+                      </div>
+                      <span className="text-gray-700 dark:text-gray-200 text-sm">{feature.text}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <Link to="/programs" className=" w-1/3 group bg-gradient-to-r from-yellow-500 to-amber-500 dark:from-yellow-600 dark:to-amber-600 text-white font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-yellow-500/20 dark:hover:shadow-yellow-600/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center">
+                  Enroll Now
+                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="mt-12">
+              <h3 className="text-xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                Manage These Conditions:
+              </h3>
+              
+              <div className="flex flex-wrap gap-2 mb-6">
+                {conditions.map((condition, index) => (
+                  <span 
+                    key={index} 
+                    className={`bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/40 dark:to-teal-900/40 border border-green-100 dark:border-green-800/30 px-3 py-1 rounded-full text-gray-700 dark:text-gray-200 text-sm transform transition-all duration-300 hover:scale-105 hover:shadow-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
+                    style={{ transitionDelay: `${index * 50}ms` }}
+                  >
+                    {condition}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-      {/* Testimonials - Enhanced with Animation */}
-      <section className="bg-gradient-to-br from-green-100 to-green-50 dark:from-gray-800 dark:to-gray-900 py-16 px-4">
+      {/* Testimonials*/}
+      <section className="py-16 px-4">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl text-green-700 dark:text-green-300 italic text-center mb-4 animate-fade-in">Healing Stories</h2>
+          <h2 className="text-4xl text-green-600 dark:text-green-300 text-center mb-4 font-semibold animate-fade-in">Healing Stories</h2>
           <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Real results from real people who committed to their health journey with our guidance
+            Real results from real people who committed to their health journey with my guidance
           </p>
           
           {/* Testimonial Carousel */}
@@ -483,9 +452,9 @@ function Home() {
           </div>
           
           <div className="text-center mt-12">
-            <button className="bg-green-600 dark:bg-green-700 text-white font-medium py-3 px-8 rounded-full hover:bg-green-700 dark:hover:bg-green-800 transform hover:scale-105 transition-all duration-300">
+            <a href="https://www.instagram.com/fitwithpratham/#" className="bg-green-600 dark:bg-green-700 text-white font-medium py-3 px-8 rounded-full hover:bg-green-700 dark:hover:bg-green-800 transform hover:scale-105 transition-all duration-300" target="_blank" rel="noopener" noreferrer>
               Read More Success Stories
-            </button>
+            </a>
           </div>
         </div>
       </section>
